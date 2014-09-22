@@ -1,5 +1,5 @@
 #Define the list of machines
-slurm_cluster = {
+machines = {
     :biotank10 => {
         :hostname => "biotank10",
         :ipaddress => "10.10.10.50",
@@ -17,10 +17,10 @@ echo "10.10.10.51    biotank11" >> /etc/hosts
 SCRIPT
 
 Vagrant.configure("2") do |global_config|
-    slurm_cluster.each_pair do |name, options|
+    machines.each_pair do |name, options|
         global_config.vm.define name do |config|
             #VM configurations
-            config.vm.box = "skinoshita/scientific-6.5"
+            config.vm.box = "dannycoates/sl64"
             config.vm.hostname = "#{name}"
             config.vm.network :private_network, ip: options[:ipaddress]
 

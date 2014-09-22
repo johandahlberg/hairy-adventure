@@ -7,6 +7,7 @@ To start up the machines run install [Vagrant](https://www.vagrantup.com/) and [
 
 You will then be able to ssh into the machines using the following syntax:
 
-    vagrant ssh biotank1
+    vagrant ssh biotank10
+    vagrant shh biotank11
 
 Good hunting!
