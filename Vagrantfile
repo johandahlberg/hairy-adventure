@@ -4,9 +4,13 @@ machines = {
         :hostname => "biotank10",
         :ipaddress => "10.10.10.50",
     },
-    :biotank11 => {                                                              
+    :biotank11 => {                
         :hostname => "biotank11",
         :ipaddress => "10.10.10.51",
+    },
+    :puppet => {
+        :hostname => "puppet",
+        :ipaddress => "10.10.10.53",
     },
 }
 
@@ -14,6 +18,7 @@ machines = {
 $script = <<SCRIPT
 echo "10.10.10.50    biotank10" >> /etc/hosts
 echo "10.10.10.51    biotank11" >> /etc/hosts
+echo "10.10.10.53    puppet" >> /etc/hosts
 SCRIPT
 
 Vagrant.configure("2") do |global_config|
